@@ -5,10 +5,12 @@ import {
     EntityDetailsComponent, ShowLineComponent,
     ListingTableComponent
 } from 'angularm';
+import { FormLineListComponent } from "app/widget/FormLineListComponent";
 
 export let defineRules = (angularm: AngularmService) => {
     angularm
         .ptr('form_line', '*', 'code', null, FormLineComponent, { inputType: 'number' })
+        .ptr('form_line', '*', 'status',null, FormLineListComponent, { inputType: 'text' })
         .dptr('form_line', FormLineComponent, { inputType: 'text' })
         .dpr('show_line', ShowLineComponent)
         .detr('list_entities', ListingTableComponent)
